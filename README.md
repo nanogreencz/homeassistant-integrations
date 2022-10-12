@@ -48,16 +48,22 @@ Repozitář by se vám měl zobrazit mezi ostatními repozitáři.
 
 ## Sensory
 
-| Jméno                                           | ID                                                               | Popis |
-| ----------------------------------------------- | ---------------------------------------------------------------- | ----- |
-| `Current kWh price in CZK`                      | `sensor.nanogreen_current_kwh_price_in_czk`                      |       |
-| `Is currently cheapest electricity hour in day` | `sensor.nanogreen_is_currently_cheapest_electricity_hour_in_day` |       |
-| `Base cheapest hour`                            | `sensor.nanogreen_base_cheapest_hour`                            |       |
-| `Base second cheapest hour`                     | `sensor.nanogreen_base_second_cheapest_hour`                     |       |
-| `Offpeak cheapest hour`                         | `sensor.nanogreen_offpeak_cheapest_hour`                         |       |
-| `Offpeak second cheapest hour`                  | `sensor.nanogreen_offpeak_second_cheapest_hour`                  |       |
-| `Peak cheapest hour`                            | `sensor.nanogreen_peak_cheapest_hour`                            |       |
-| `Peak second cheapest hour`                     | `sensor.nanogreen_peak_second_cheapest_hour`                     |       |
+| Jméno                                           | ID                                                               |
+| ----------------------------------------------- | ---------------------------------------------------------------- |
+| `Current kWh price in CZK`                      | `sensor.nanogreen_current_kwh_price_in_czk`                      |
+| `Is currently cheapest electricity hour in day` | `sensor.nanogreen_is_currently_cheapest_electricity_hour_in_day` |
+| `Base cheapest hour`                            | `sensor.nanogreen_base_cheapest_hour`                            |
+| `Base second cheapest hour`                     | `sensor.nanogreen_base_second_cheapest_hour`                     |
+| `Offpeak cheapest hour`                         | `sensor.nanogreen_offpeak_cheapest_hour`                         |
+| `Offpeak second cheapest hour`                  | `sensor.nanogreen_offpeak_second_cheapest_hour`                  |
+| `Peak cheapest hour`                            | `sensor.nanogreen_peak_cheapest_hour`                            |
+| `Peak second cheapest hour`                     | `sensor.nanogreen_peak_second_cheapest_hour`                     |
+
+Vysvětlení:
+
+PEAK LOAD (8:00 - 20:00)
+
+OFFPEAK LOAD (0:00 - 8:00, 20:00 - 24:00)
 
 ## Grafy
 
@@ -65,7 +71,7 @@ Repozitář by se vám měl zobrazit mezi ostatními repozitáři.
 
 ![Graf ceny elektřiny](docs/examples/graf.png)
 
-- lze použít https://github.com/RomRider/apexcharts-card pro vizualizace
+- Po nainstalování [ApexCharts](https://github.com/RomRider/apexcharts-card) přes HACS de návodu, přidejte custom komponentu a vložte do ní níže uvedený kód.
 
 ```yaml
 type: custom:apexcharts-card

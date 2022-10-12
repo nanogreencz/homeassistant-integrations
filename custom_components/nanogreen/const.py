@@ -29,35 +29,31 @@ ATTR_API_TOMORROW_HOURLY_PRICES = "tomorrow_hourly_prices"
 SENSOR_TYPES: tuple[SensorEntityDescription, ...] = (
     SensorEntityDescription(
         key=ATTR_API_CURRENT_PRICE,
-        name="Current kWh price in CZK",
+        name="Current price [CZK/kWh]",
     ),
     SensorEntityDescription(
         key=ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR,
-        name="Is currently cheapest electricity hour in day",
+        name="Day cheapest hour [bool]",
     ),
     SensorEntityDescription(
         key=ATTR_API_TODAY_BASE_CHEAPEST_HOUR,
-        name="Base cheapest hour",
+        name="Day cheapest hour",
+    ),
+    SensorEntityDescription(
+        key=ATTR_API_TODAY_BASE_SECOND_CHEAPEST_HOUR,
+        name="Day second cheapest hour",
     ),
     SensorEntityDescription(
         key=ATTR_API_TODAY_PEAK_CHEAPEST_HOUR,
         name="Peak cheapest hour",
     ),
     SensorEntityDescription(
-        key=ATTR_API_TODAY_OFFPEAK_CHEAPEST_HOUR,
-        name="Offpeak cheapest hour",
-    ),
-    SensorEntityDescription(
-        key=ATTR_API_TODAY_BASE_SECOND_CHEAPEST_HOUR,
-        name="Base second cheapest hour",
-    ),
-    SensorEntityDescription(
         key=ATTR_API_TODAY_PEAK_SECOND_CHEAPEST_HOUR,
         name="Peak second cheapest hour",
     ),
     SensorEntityDescription(
-        key=ATTR_API_TODAY_OFFPEAK_SECOND_CHEAPEST_HOUR,
-        name="Offpeak second cheapest hour",
+        key=ATTR_API_TODAY_OFFPEAK_CHEAPEST_HOUR,
+        name="Offpeak cheapest hour",
     ),
     SensorEntityDescription(
         key=ATTR_API_TODAY_OFFPEAK_SECOND_CHEAPEST_HOUR,

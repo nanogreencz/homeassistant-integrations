@@ -33,7 +33,7 @@ class NanogreenPriceSensor(SensorEntity):
         super().__init__()
         self.entity_description = description
         self._coordinator = coordinator
-        self._attr_name = f"{name} {description.name}"
+        self._attr_name = description.name
         self._attr_unique_id = unique_id
 
     @property
