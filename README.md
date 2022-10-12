@@ -45,3 +45,43 @@ Repozitář by se vám měl zobrazit mezi ostatními repozitáři.
 ![instalace integrace krok 1](docs/installation/instalace_integrace_1.png)
 
 ![instalace integrace krok 2](docs/installation/instalace_integrace_2.png)
+
+## Sensory
+
+| Jméno                                           | ID                                                               | Popis |
+| ----------------------------------------------- | ---------------------------------------------------------------- | ----- |
+| `Current kWh price in CZK`                      | `sensor.nanogreen_current_kwh_price_in_czk`                      |       |
+| `Is currently cheapest electricity hour in day` | `sensor.nanogreen_is_currently_cheapest_electricity_hour_in_day` |       |
+| `Base cheapest hour`                            | `sensor.nanogreen_base_cheapest_hour`                            |       |
+| `Base second cheapest hour`                     | `sensor.nanogreen_base_second_cheapest_hour`                     |       |
+| `Offpeak cheapest hour`                         | `sensor.nanogreen_offpeak_cheapest_hour`                         |       |
+| `Offpeak second cheapest hour`                  | `sensor.nanogreen_offpeak_second_cheapest_hour`                  |       |
+| `Peak cheapest hour`                            | `sensor.nanogreen_peak_cheapest_hour`                            |       |
+| `Peak second cheapest hour`                     | `sensor.nanogreen_peak_second_cheapest_hour`                     |       |
+
+## Grafy
+
+### Cena elektřiny
+
+![Graf ceny elektřiny](docs/examples/graf.png)
+
+- lze použít https://github.com/RomRider/apexcharts-card pro vizualizace
+
+```yaml
+type: custom:apexcharts-card
+header:
+  show: true
+  title: Cena elektriny dnes
+  show_states: true
+  colorize_states: true
+series:
+  - entity: sensor.nanogreen_current_kwh_price_in_czk
+    data_generator: |
+      return entity.attributes.today_hourly_prices.map((price, index) => {
+        const date = new Date().setHours(index)
+        return [date, price];
+      });
+graph_span: 24h
+span:
+  start: day
+```
