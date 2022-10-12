@@ -1,11 +1,11 @@
 """Consts for the NanoGreen energy."""
 
-from homeassistant.components.sensor import SensorEntityDescription, SensorDeviceClass
+from homeassistant.components.sensor import SensorEntityDescription
 from homeassistant.const import Platform
 
 
 DOMAIN = "nanogreen"
-DEFAULT_NAME = "Nanogreen prices"
+DEFAULT_NAME = "nanogreen"
 DEFAULT_LANGUAGE = "en"
 ENTRY_NAME = "name"
 ENTRY_COORDINATOR = "nanogreen_coordinator"
