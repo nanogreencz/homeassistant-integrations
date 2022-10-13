@@ -48,16 +48,16 @@ Repozitář by se vám měl zobrazit mezi ostatními repozitáři.
 
 ## Sensory
 
-| Jméno                                           | ID                                                               |
-| ----------------------------------------------- | ---------------------------------------------------------------- |
-| `Current kWh price in CZK`                      | `sensor.nanogreen_current_kwh_price_in_czk`                      |
-| `Is currently cheapest electricity hour in day` | `sensor.nanogreen_is_currently_cheapest_electricity_hour_in_day` |
-| `Base cheapest hour`                            | `sensor.nanogreen_base_cheapest_hour`                            |
-| `Base second cheapest hour`                     | `sensor.nanogreen_base_second_cheapest_hour`                     |
-| `Offpeak cheapest hour`                         | `sensor.nanogreen_offpeak_cheapest_hour`                         |
-| `Offpeak second cheapest hour`                  | `sensor.nanogreen_offpeak_second_cheapest_hour`                  |
-| `Peak cheapest hour`                            | `sensor.nanogreen_peak_cheapest_hour`                            |
-| `Peak second cheapest hour`                     | `sensor.nanogreen_peak_second_cheapest_hour`                     |
+| Jméno                                           | ID                                                     |
+| ----------------------------------------------- | ------------------------------------------------------ |
+| `Current kWh price in CZK`                      | `sensor.current_kwh_price_in_czk`                      |
+| `Is currently cheapest electricity hour in day` | `sensor.is_currently_cheapest_electricity_hour_in_day` |
+| `Base cheapest hour`                            | `sensor.base_cheapest_hour`                            |
+| `Base second cheapest hour`                     | `sensor.base_second_cheapest_hour`                     |
+| `Offpeak cheapest hour`                         | `sensor.offpeak_cheapest_hour`                         |
+| `Offpeak second cheapest hour`                  | `sensor.offpeak_second_cheapest_hour`                  |
+| `Peak cheapest hour`                            | `sensor.peak_cheapest_hour`                            |
+| `Peak second cheapest hour`                     | `sensor.peak_second_cheapest_hour`                     |
 
 Vysvětlení:
 
@@ -81,7 +81,7 @@ header:
   show_states: true
   colorize_states: true
 series:
-  - entity: sensor.nanogreen_current_kwh_price_in_czk
+  - entity: sensor.current_kwh_price_in_czk
     data_generator: |
       return entity.attributes.today_hourly_prices.map((price, index) => {
         const date = new Date().setHours(index)
