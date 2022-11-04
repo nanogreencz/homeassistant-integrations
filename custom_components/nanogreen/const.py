@@ -34,22 +34,22 @@ SENSOR_TYPES: tuple[SensorEntityDescription, ...] = (
     SensorEntityDescription(
         key=ATTR_API_CURRENT_MARKET_PRICE,
         name="Current market price [CZK/kWh]",
-        unit_of_measurement="CZK/kWh",
+        native_unit_of_measurement="CZK/kWh",
     ),
     SensorEntityDescription(
         key=ATTR_API_CURRENT_CONSUMPTION_PRICE,
         name="Current consumption price [CZK/kWh]",
-        unit_of_measurement="CZK/kWh",
+        native_unit_of_measurement="CZK/kWh",
     ),
     SensorEntityDescription(
         key=ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE,
         name="Current production price (consumption with Nano) [CZK/kWh]",
-        unit_of_measurement="CZK/kWh",
+        native_unit_of_measurement="CZK/kWh",
     ),
     SensorEntityDescription(
         key=ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE,
         name="Current production price (consumption NOT with Nano) [CZK/kWh]",
-        unit_of_measurement="CZK/kWh",
+        native_unit_of_measurement="CZK/kWh",
     ),
     SensorEntityDescription(
         key=ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR,
