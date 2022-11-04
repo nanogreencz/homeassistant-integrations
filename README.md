@@ -81,7 +81,7 @@ header:
   show_states: true
   colorize_states: true
 series:
-  - entity: sensor.current_kwh_price_in_czk
+  - entity: sensor.current_market_price_czk_kwh
     data_generator: |
       return entity.attributes.today_hourly_prices.map((price, index) => {
         const date = new Date().setHours(index)
