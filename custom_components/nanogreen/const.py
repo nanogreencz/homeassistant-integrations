@@ -15,7 +15,10 @@ UPDATE_LISTENER = "update_listener"
 PLATFORMS = [Platform.SENSOR]
 
 
-ATTR_API_CURRENT_PRICE = "current_price"
+ATTR_API_CURRENT_MARKET_PRICE = "current_market_price"
+ATTR_API_CURRENT_CONSUMPTION_PRICE = "current_consumption_price"
+ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE = "current_production_price_with_nano"
+ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE = "current_production_price_without_nano"
 ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR = "is_currently_cheapest_hour"
 ATTR_API_TODAY_BASE_CHEAPEST_HOUR = "today_base_cheapest_hour"
 ATTR_API_TODAY_PEAK_CHEAPEST_HOUR = "today_peak_cheapest_hour"
@@ -26,10 +29,27 @@ ATTR_API_TODAY_OFFPEAK_SECOND_CHEAPEST_HOUR = "today_offpeak_second_cheapest_hou
 ATTR_API_TODAY_HOURLY_PRICES = "today_hourly_prices"
 ATTR_API_TOMORROW_HOURLY_PRICES = "tomorrow_hourly_prices"
 
+
 SENSOR_TYPES: tuple[SensorEntityDescription, ...] = (
     SensorEntityDescription(
-        key=ATTR_API_CURRENT_PRICE,
-        name="Current price [CZK/kWh]",
+        key=ATTR_API_CURRENT_MARKET_PRICE,
+        name="Current market price [CZK/kWh]",
+        unit_of_measurement="CZK/kWh",
+    ),
+    SensorEntityDescription(
+        key=ATTR_API_CURRENT_CONSUMPTION_PRICE,
+        name="Current consumption price [CZK/kWh]",
+        unit_of_measurement="CZK/kWh",
+    ),
+    SensorEntityDescription(
+        key=ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE,
+        name="Current production price (consumption with Nano) [CZK/kWh]",
+        unit_of_measurement="CZK/kWh",
+    ),
+    SensorEntityDescription(
+        key=ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE,
+        name="Current production price (consumption NOT with Nano) [CZK/kWh]",
+        unit_of_measurement="CZK/kWh",
     ),
     SensorEntityDescription(
         key=ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR,

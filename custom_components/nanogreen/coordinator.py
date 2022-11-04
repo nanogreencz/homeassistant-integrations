@@ -9,7 +9,10 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, Upda
 
 from .const import (
     DOMAIN,
-    ATTR_API_CURRENT_PRICE,
+    ATTR_API_CURRENT_MARKET_PRICE,
+    ATTR_API_CURRENT_CONSUMPTION_PRICE,
+    ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE,
+    ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE,
     ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR,
     ATTR_API_TODAY_BASE_CHEAPEST_HOUR,
     ATTR_API_TODAY_BASE_SECOND_CHEAPEST_HOUR,
@@ -50,8 +53,16 @@ class NanogreenUpdateCoordinator(DataUpdateCoordinator):
     async def _convert_response(self, response):
         text = await response.text()
         data = json.loads(text)
+
+        current_price = data.get("currentPrice")
+        if current_price is None:
+            current_price = 0
+
         return {
-            ATTR_API_CURRENT_PRICE: data.get("currentPrice"),
+            ATTR_API_CURRENT_MARKET_PRICE: current_price,
+            ATTR_API_CURRENT_CONSUMPTION_PRICE: current_price - 0.35,
+            ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE: current_price - 0.6,
+            ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE: current_price - 0.9,
             ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR: data.get("isCurrentlyCheapestHour"),
             ATTR_API_TODAY_BASE_CHEAPEST_HOUR: data.get("todayBaseCheapestHour"),
             ATTR_API_TODAY_BASE_SECOND_CHEAPEST_HOUR: data.get(
