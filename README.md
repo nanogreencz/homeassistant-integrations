@@ -75,6 +75,9 @@ OFFPEAK LOAD (0:00 - 8:00, 20:00 - 24:00)
 
 ```yaml
 type: custom:apexcharts-card
+now:
+  show: true
+  label: Now
 header:
   show: true
   title: Cena elektriny dnes
