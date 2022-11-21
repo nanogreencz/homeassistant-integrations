@@ -75,9 +75,6 @@ OFFPEAK LOAD (0:00 - 8:00, 20:00 - 24:00)
 
 ```yaml
 type: custom:apexcharts-card
-now:
-  show: true
-  label: Now
 header:
   show: true
   title: Cena elektriny dnes
@@ -87,9 +84,14 @@ series:
   - entity: sensor.current_market_price_czk_kwh
     data_generator: |
       return entity.attributes.today_hourly_prices.map((price, index) => {
-        const date = new Date().setHours(index)
+        const date = new Date()
+        date.setHours(index)
+        date.setMinutes(0)
+        date.setSeconds(0)
         return [date, price];
       });
+    show:
+      in_header: before_now
 graph_span: 24h
 span:
   start: day
