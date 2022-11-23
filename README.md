@@ -48,16 +48,29 @@ Repozitář by se vám měl zobrazit mezi ostatními repozitáři.
 
 ## Sensory
 
-| Jméno                                           | ID                                                     |
-| ----------------------------------------------- | ------------------------------------------------------ |
-| `Current kWh price in CZK`                      | `sensor.current_kwh_price_in_czk`                      |
-| `Is currently cheapest electricity hour in day` | `sensor.is_currently_cheapest_electricity_hour_in_day` |
-| `Base cheapest hour`                            | `sensor.base_cheapest_hour`                            |
-| `Base second cheapest hour`                     | `sensor.base_second_cheapest_hour`                     |
-| `Offpeak cheapest hour`                         | `sensor.offpeak_cheapest_hour`                         |
-| `Offpeak second cheapest hour`                  | `sensor.offpeak_second_cheapest_hour`                  |
-| `Peak cheapest hour`                            | `sensor.peak_cheapest_hour`                            |
-| `Peak second cheapest hour`                     | `sensor.peak_second_cheapest_hour`                     |
+| ID                                      | Popis                                                                                       |
+| --------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `current_market_price`                  | Současná tržní cena elektřiny.                                                              |
+| `current_consumption_price`             | TODO                                                                                        |
+| `current_production_price_with_nano`    | TODO                                                                                        |
+| `current_production_price_without_nano` | TODO                                                                                        |
+| `today_base_cheapest_hour`              | Dnešní nejlevnější hodina za celý den.                                                      |
+| `today_peak_cheapest_hour`              | Dnešní nejlevnější hodina v energetické špičce.                                             |
+| `today_offpeak_cheapest_hour`           | Dnešní nejlevnější hodina mimo energetickou špičku.                                         |
+| `today_base_second_cheapest_hour`       | Dnešní druhá nejlevnější hodina za celý den.                                                |
+| `today_peak_second_cheapest_hour`       | Dnešní druhá nejlevnější hodina v energetické špičce.                                       |
+| `today_offpeak_second_cheapest_hour`    | Dnešní druhá nejlevnější hodina mimo energetickou špičku.                                   |
+| `is_currently_cheapest_hour`            | Binární sensor. Zapnutý, pokud je nejlevnější hodina elektřiny z celého dne.                |
+| `is_currently_second_cheapest_hour`     | Binární sensor. Zapnutý, pokud je druhá nejlevnější hodina elektřiny z celého dne.          |
+| `is_currently_third_cheapest_hour`      | Binární sensor. Zapnutý, pokud je třetí nejlevnější hodina elektřiny z celého dne.          |
+| `is_currently_fourth_cheapest_hour`     | Binární sensor. Zapnutý, pokud je čtvrtá nejlevnější hodina elektřiny z celého dne.         |
+| `is_currently_fifth_cheapest_hour`      | Binární sensor. Zapnutý, pokud je pátá nejlevnější hodina elektřiny z celého dne.           |
+| `is_currently_sixth_cheapest_hour`      | Binární sensor. Zapnutý, pokud je šestá nejlevnější hodina elektřiny z celého dne.          |
+| `is_currently_in_two_cheapest_hours`    | Binární sensor. Zapnutý, pokud je jedna ze dvou nejlevnějších hodin elektřiny z celého dne. |
+| `is_currently_in_three_cheapest_hours`  | Binární sensor. Zapnutý, pokud je jedna ze tří nejlevnějších hodin elektřiny z celého dne.  |
+| `is_currently_in_four_cheapest_hours`   | Binární sensor. Zapnutý, pokud je jedna ze čtyř nejlevnějších hodin elektřiny z celého dne. |
+| `is_currently_in_five_cheapest_hours`   | Binární sensor. Zapnutý, pokud je jedna z pěti nejlevnějších hodin elektřiny z celého dne.  |
+| `is_currently_in_six_cheapest_hours`    | Binární sensor. Zapnutý, pokud je jedna z šesti nejlevnějších hodin elektřiny z celého dne. |
 
 Vysvětlení:
 

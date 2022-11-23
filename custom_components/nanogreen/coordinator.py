@@ -8,6 +8,16 @@ import async_timeout
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from .const import (
+    ATTR_API_IS_CURRENTLY_FIFTH_CHEAPEST_HOUR,
+    ATTR_API_IS_CURRENTLY_FOURTH_CHEAPEST_HOUR,
+    ATTR_API_IS_CURRENTLY_SECOND_CHEAPEST_HOUR,
+    ATTR_API_IS_CURRENTLY_THIRD_CHEAPEST_HOUR,
+    ATTR_API_IS_CURRENTLY_SIXTH_CHEAPEST_HOUR,
+    ATTR_API_IS_CURRENTLY_IN_FIVE_CHEAPEST_HOURS,
+    ATTR_API_IS_CURRENTLY_IN_FOUR_CHEAPEST_HOURS,
+    ATTR_API_IS_CURRENTLY_IN_SIX_CHEAPEST_HOURS,
+    ATTR_API_IS_CURRENTLY_IN_THREE_CHEAPEST_HOURS,
+    ATTR_API_IS_CURRENTLY_IN_TWO_CHEAPEST_HOURS,
     DOMAIN,
     ATTR_API_CURRENT_MARKET_PRICE,
     ATTR_API_CURRENT_CONSUMPTION_PRICE,
@@ -59,11 +69,11 @@ class NanogreenUpdateCoordinator(DataUpdateCoordinator):
             current_price = 0
 
         return {
+            # non binary sensors
             ATTR_API_CURRENT_MARKET_PRICE: current_price,
             ATTR_API_CURRENT_CONSUMPTION_PRICE: current_price - 0.35,
             ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE: current_price - 0.6,
             ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE: current_price - 0.9,
-            ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR: data.get("isCurrentlyCheapestHour"),
             ATTR_API_TODAY_BASE_CHEAPEST_HOUR: data.get("todayBaseCheapestHour"),
             ATTR_API_TODAY_BASE_SECOND_CHEAPEST_HOUR: data.get(
                 "todayBaseSecondCheapestHour"
@@ -78,4 +88,38 @@ class NanogreenUpdateCoordinator(DataUpdateCoordinator):
             ),
             ATTR_API_TODAY_HOURLY_PRICES: data.get("todayHourlyPrices", []),
             ATTR_API_TOMORROW_HOURLY_PRICES: data.get("tomorrowHourlyPrices", []),
+            # binary sensors
+            ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR: data.get(
+                "isCurrentlyCheapestHour", None
+            ),
+            ATTR_API_IS_CURRENTLY_SECOND_CHEAPEST_HOUR: data.get(
+                "isCurrentlySecondCheapestHour", None
+            ),
+            ATTR_API_IS_CURRENTLY_THIRD_CHEAPEST_HOUR: data.get(
+                "isCurrentlyThirdCheapestHour", None
+            ),
+            ATTR_API_IS_CURRENTLY_FOURTH_CHEAPEST_HOUR: data.get(
+                "isCurrentlyFourthCheapestHour", None
+            ),
+            ATTR_API_IS_CURRENTLY_FIFTH_CHEAPEST_HOUR: data.get(
+                "isCurrentlyFifthCheapestHour", None
+            ),
+            ATTR_API_IS_CURRENTLY_SIXTH_CHEAPEST_HOUR: data.get(
+                "isCurrentlySixthCheapestHour", None
+            ),
+            ATTR_API_IS_CURRENTLY_IN_TWO_CHEAPEST_HOURS: data.get(
+                "isCurrentlyInTwoCheapestHours", None
+            ),
+            ATTR_API_IS_CURRENTLY_IN_THREE_CHEAPEST_HOURS: data.get(
+                "isCurrentlyInThreeCheapestHours", None
+            ),
+            ATTR_API_IS_CURRENTLY_IN_FOUR_CHEAPEST_HOURS: data.get(
+                "isCurrentlyInFourCheapestHours", None
+            ),
+            ATTR_API_IS_CURRENTLY_IN_FIVE_CHEAPEST_HOURS: data.get(
+                "isCurrentlyInFiveCheapestHours", None
+            ),
+            ATTR_API_IS_CURRENTLY_IN_SIX_CHEAPEST_HOURS: data.get(
+                "isCurrentlyInSixCheapestHours", None
+            ),
         }
