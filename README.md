@@ -48,29 +48,29 @@ Repozitář by se vám měl zobrazit mezi ostatními repozitáři.
 
 ## Sensory
 
-| ID                                      | Popis                                                                                       |
-| --------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `current_market_price`                  | Současná tržní cena elektřiny.                                                              |
-| `current_consumption_price`             | TODO                                                                                        |
-| `current_production_price_with_nano`    | TODO                                                                                        |
-| `current_production_price_without_nano` | TODO                                                                                        |
-| `today_base_cheapest_hour`              | Dnešní nejlevnější hodina za celý den.                                                      |
-| `today_peak_cheapest_hour`              | Dnešní nejlevnější hodina v energetické špičce.                                             |
-| `today_offpeak_cheapest_hour`           | Dnešní nejlevnější hodina mimo energetickou špičku.                                         |
-| `today_base_second_cheapest_hour`       | Dnešní druhá nejlevnější hodina za celý den.                                                |
-| `today_peak_second_cheapest_hour`       | Dnešní druhá nejlevnější hodina v energetické špičce.                                       |
-| `today_offpeak_second_cheapest_hour`    | Dnešní druhá nejlevnější hodina mimo energetickou špičku.                                   |
-| `is_currently_cheapest_hour`            | Binární sensor. Zapnutý, pokud je nejlevnější hodina elektřiny z celého dne.                |
-| `is_currently_second_cheapest_hour`     | Binární sensor. Zapnutý, pokud je druhá nejlevnější hodina elektřiny z celého dne.          |
-| `is_currently_third_cheapest_hour`      | Binární sensor. Zapnutý, pokud je třetí nejlevnější hodina elektřiny z celého dne.          |
-| `is_currently_fourth_cheapest_hour`     | Binární sensor. Zapnutý, pokud je čtvrtá nejlevnější hodina elektřiny z celého dne.         |
-| `is_currently_fifth_cheapest_hour`      | Binární sensor. Zapnutý, pokud je pátá nejlevnější hodina elektřiny z celého dne.           |
-| `is_currently_sixth_cheapest_hour`      | Binární sensor. Zapnutý, pokud je šestá nejlevnější hodina elektřiny z celého dne.          |
-| `is_currently_in_two_cheapest_hours`    | Binární sensor. Zapnutý, pokud je jedna ze dvou nejlevnějších hodin elektřiny z celého dne. |
-| `is_currently_in_three_cheapest_hours`  | Binární sensor. Zapnutý, pokud je jedna ze tří nejlevnějších hodin elektřiny z celého dne.  |
-| `is_currently_in_four_cheapest_hours`   | Binární sensor. Zapnutý, pokud je jedna ze čtyř nejlevnějších hodin elektřiny z celého dne. |
-| `is_currently_in_five_cheapest_hours`   | Binární sensor. Zapnutý, pokud je jedna z pěti nejlevnějších hodin elektřiny z celého dne.  |
-| `is_currently_in_six_cheapest_hours`    | Binární sensor. Zapnutý, pokud je jedna z šesti nejlevnějších hodin elektřiny z celého dne. |
+| ID                                      | Popis                                                                                                                                         |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `current_market_price`                  | Současná tržní cena elektřiny.                                                                                                                |
+| `current_consumption_price`             | Tržní cena pro spotřebu po odečtení poplatku za služby obchodu ve výši 350 Kč/MWh bez DPH.                                                    |
+| `current_production_price_with_nano`    | Tržní cena pro výkup přebytků při současném odběru elektřiny od Nano Green po odečtení poplatku za služby obchodu ve výši 600 Kč/MWh bez DPH. |
+| `current_production_price_without_nano` | Tržní cena pro výkup přebytků při odběru elektřiny od jiného dodavatele po odečtení poplatku za služby obchodu ve výši 900 Kč/MWh bez DPH.    |
+| `today_base_cheapest_hour`              | Dnešní nejlevnější hodina za celý den.                                                                                                        |
+| `today_peak_cheapest_hour`              | Dnešní nejlevnější hodina v energetické špičce.                                                                                               |
+| `today_offpeak_cheapest_hour`           | Dnešní nejlevnější hodina mimo energetickou špičku.                                                                                           |
+| `today_base_second_cheapest_hour`       | Dnešní druhá nejlevnější hodina za celý den.                                                                                                  |
+| `today_peak_second_cheapest_hour`       | Dnešní druhá nejlevnější hodina v energetické špičce.                                                                                         |
+| `today_offpeak_second_cheapest_hour`    | Dnešní druhá nejlevnější hodina mimo energetickou špičku.                                                                                     |
+| `is_currently_cheapest_hour`            | Binární sensor. Zapnutý, pokud je nejlevnější hodina elektřiny z celého dne.                                                                  |
+| `is_currently_second_cheapest_hour`     | Binární sensor. Zapnutý, pokud je druhá nejlevnější hodina elektřiny z celého dne.                                                            |
+| `is_currently_third_cheapest_hour`      | Binární sensor. Zapnutý, pokud je třetí nejlevnější hodina elektřiny z celého dne.                                                            |
+| `is_currently_fourth_cheapest_hour`     | Binární sensor. Zapnutý, pokud je čtvrtá nejlevnější hodina elektřiny z celého dne.                                                           |
+| `is_currently_fifth_cheapest_hour`      | Binární sensor. Zapnutý, pokud je pátá nejlevnější hodina elektřiny z celého dne.                                                             |
+| `is_currently_sixth_cheapest_hour`      | Binární sensor. Zapnutý, pokud je šestá nejlevnější hodina elektřiny z celého dne.                                                            |
+| `is_currently_in_two_cheapest_hours`    | Binární sensor. Zapnutý, pokud je jedna ze dvou nejlevnějších hodin elektřiny z celého dne.                                                   |
+| `is_currently_in_three_cheapest_hours`  | Binární sensor. Zapnutý, pokud je jedna ze tří nejlevnějších hodin elektřiny z celého dne.                                                    |
+| `is_currently_in_four_cheapest_hours`   | Binární sensor. Zapnutý, pokud je jedna ze čtyř nejlevnějších hodin elektřiny z celého dne.                                                   |
+| `is_currently_in_five_cheapest_hours`   | Binární sensor. Zapnutý, pokud je jedna z pěti nejlevnějších hodin elektřiny z celého dne.                                                    |
+| `is_currently_in_six_cheapest_hours`    | Binární sensor. Zapnutý, pokud je jedna z šesti nejlevnějších hodin elektřiny z celého dne.                                                   |
 
 Vysvětlení:
 
@@ -84,7 +84,7 @@ OFFPEAK LOAD (0:00 - 8:00, 20:00 - 24:00)
 
 ![Graf ceny elektřiny](docs/examples/graf.png)
 
-- Po nainstalování [ApexCharts](https://github.com/RomRider/apexcharts-card) přes HACS de návodu, přidejte custom komponentu a vložte do ní níže uvedený kód.
+- Po nainstalování [ApexCharts](https://github.com/RomRider/apexcharts-card) přes HACS dle návodu, přidejte vlastní komponentu a vložte do ní níže uvedený kód.
 
 ```yaml
 type: custom:apexcharts-card
