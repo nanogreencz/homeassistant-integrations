@@ -14,9 +14,13 @@ CONFIG_FLOW_VERSION = 1
 CONF_LANGUAGE = "language"
 UPDATE_LISTENER = "update_listener"
 PLATFORMS = [Platform.SENSOR]
-VAT = 1.21 # DPH 21%
-DAILY_FEE = (129+3.43+28.3)/30.437 # Monthly fees divided by average days in month. Without VAT.
-WH_FEE = (350 + 113)/1000 # Fees per MWh in watt, without VAT
+VAT = 1.21  # DPH 21%
+
+# Monthly fees divided by average days in month. Without VAT.
+DAILY_FEE = (129+3.43+28.3)/30.437
+
+# Fees per MWh in watt, without VAT
+WH_FEE = (350 + 113)/1000
 
 
 ATTR_API_CURRENT_MARKET_PRICE = "current_market_price"
@@ -31,6 +35,7 @@ ATTR_API_TODAY_BASE_SECOND_CHEAPEST_HOUR = "today_base_second_cheapest_hour"
 ATTR_API_TODAY_PEAK_SECOND_CHEAPEST_HOUR = "today_peak_second_cheapest_hour"
 ATTR_API_TODAY_OFFPEAK_SECOND_CHEAPEST_HOUR = "today_offpeak_second_cheapest_hour"
 ATTR_API_TODAY_HOURLY_PRICES = "today_hourly_prices"
+ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_WITH_VAT = "today_hourly_consumption_prices_with_vat"
 ATTR_API_TOMORROW_HOURLY_PRICES = "tomorrow_hourly_prices"
 
 

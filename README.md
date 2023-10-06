@@ -109,3 +109,29 @@ graph_span: 24h
 span:
   start: day
 ```
+
+- také si můžete do grafu dát cenu spotřeby včetně všech poplatků a DPH
+
+```yaml
+type: custom:apexcharts-card
+header:
+  show: true
+  title: Cena elektriny dnes
+  show_states: true
+  colorize_states: true
+series:
+  - entity: sensor.current_market_price_czk_kwh
+    data_generator: |
+      return entity.attributes.today_hourly_consumption_prices_with_vat.map((price, index) => {
+        const date = new Date()
+        date.setHours(index)
+        date.setMinutes(0)
+        date.setSeconds(0)
+        return [date, price];
+      });
+    show:
+      in_header: before_now
+graph_span: 24h
+span:
+  start: day
+```

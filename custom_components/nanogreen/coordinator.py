@@ -32,6 +32,7 @@ from .const import (
     ATTR_API_TODAY_PEAK_CHEAPEST_HOUR,
     ATTR_API_TODAY_PEAK_SECOND_CHEAPEST_HOUR,
     ATTR_API_TODAY_HOURLY_PRICES,
+    ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_WITH_VAT,
     ATTR_API_TOMORROW_HOURLY_PRICES,
     DAILY_FEE,
     WH_FEE,
@@ -92,6 +93,7 @@ class NanogreenUpdateCoordinator(DataUpdateCoordinator):
                 "todayPeakSecondCheapestHour"
             ),
             ATTR_API_TODAY_HOURLY_PRICES: data.get("todayHourlyPrices", []),
+            ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_WITH_VAT: list(map(lambda x: (x + WH_FEE + DAILY_FEE) * VAT, data.get("todayHourlyPrices", []))),
             ATTR_API_TOMORROW_HOURLY_PRICES: data.get("tomorrowHourlyPrices", []),
             # binary sensors
             ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR: data.get(
