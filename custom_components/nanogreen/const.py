@@ -16,8 +16,8 @@ UPDATE_LISTENER = "update_listener"
 PLATFORMS = [Platform.SENSOR]
 VAT = 1.21  # DPH 21%
 
-# Monthly fees divided by average days in month. Without VAT.
-DAILY_FEE = (129+3.43+28.3)/30.437
+# Monthly fees divided by average days in month and hours in day. Without VAT.
+HOURLY_FEE = (129+3.43+28.3)/30.437/24
 
 # Fees per MWh in watt, without VAT
 WH_FEE = (350 + 113)/1000
