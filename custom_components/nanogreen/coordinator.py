@@ -21,6 +21,7 @@ from .const import (
     DOMAIN,
     ATTR_API_CURRENT_MARKET_PRICE,
     ATTR_API_CURRENT_CONSUMPTION_PRICE,
+    ATTR_API_CURRENT_CONSUMPTION_PRICE_WITH_VAT,
     ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE,
     ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE,
     ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR,
@@ -32,6 +33,9 @@ from .const import (
     ATTR_API_TODAY_PEAK_SECOND_CHEAPEST_HOUR,
     ATTR_API_TODAY_HOURLY_PRICES,
     ATTR_API_TOMORROW_HOURLY_PRICES,
+    DAILY_FEE,
+    WH_FEE,
+    VAT,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -71,7 +75,8 @@ class NanogreenUpdateCoordinator(DataUpdateCoordinator):
         return {
             # non binary sensors
             ATTR_API_CURRENT_MARKET_PRICE: current_price,
-            ATTR_API_CURRENT_CONSUMPTION_PRICE: current_price + 0.35,
+            ATTR_API_CURRENT_CONSUMPTION_PRICE: current_price + WH_FEE + DAILY_FEE,
+            ATTR_API_CURRENT_CONSUMPTION_PRICE_WITH_VAT: (current_price + WH_FEE + DAILY_FEE) * VAT,
             ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE: current_price - 0.6,
             ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE: current_price - 0.9,
             ATTR_API_TODAY_BASE_CHEAPEST_HOUR: data.get("todayBaseCheapestHour"),
