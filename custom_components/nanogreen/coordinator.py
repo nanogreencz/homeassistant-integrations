@@ -34,7 +34,8 @@ from .const import (
     ATTR_API_TODAY_HOURLY_PRICES,
     ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_INCL_VAT,
     ATTR_API_TOMORROW_HOURLY_PRICES,
-    KWH_FEE,
+    CONSUMPTION_KWH_FEE,
+    PRODUCTION_KWH_FEE,
     VAT,
 )
 
@@ -75,9 +76,9 @@ class NanogreenUpdateCoordinator(DataUpdateCoordinator):
         return {
             # non binary sensors
             ATTR_API_CURRENT_MARKET_PRICE: current_price,
-            ATTR_API_CURRENT_CONSUMPTION_PRICE: current_price + KWH_FEE,
-            ATTR_API_CURRENT_CONSUMPTION_PRICE_INCL_VAT: (current_price + KWH_FEE) * VAT,
-            ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE: current_price - 0.6,
+            ATTR_API_CURRENT_CONSUMPTION_PRICE: current_price + CONSUMPTION_KWH_FEE,
+            ATTR_API_CURRENT_CONSUMPTION_PRICE_INCL_VAT: (current_price + CONSUMPTION_KWH_FEE) * VAT,
+            ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE: current_price - PRODUCTION_KWH_FEE,
             ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE: current_price - 0.9,
             ATTR_API_TODAY_BASE_CHEAPEST_HOUR: data.get("todayBaseCheapestHour"),
             ATTR_API_TODAY_BASE_SECOND_CHEAPEST_HOUR: data.get(
@@ -92,7 +93,7 @@ class NanogreenUpdateCoordinator(DataUpdateCoordinator):
                 "todayPeakSecondCheapestHour"
             ),
             ATTR_API_TODAY_HOURLY_PRICES: data.get("todayHourlyPrices", []),
-            ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_INCL_VAT: list(map(lambda x: (x + KWH_FEE) * VAT, data.get("todayHourlyPrices", []))),
+            ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_INCL_VAT: list(map(lambda x: (x + CONSUMPTION_KWH_FEE) * VAT, data.get("todayHourlyPrices", []))),
             ATTR_API_TOMORROW_HOURLY_PRICES: data.get("tomorrowHourlyPrices", []),
             # binary sensors
             ATTR_API_IS_CURRENTLY_CHEAPEST_HOUR: data.get(

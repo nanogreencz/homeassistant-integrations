@@ -17,7 +17,8 @@ PLATFORMS = [Platform.SENSOR]
 VAT = 1.21  # DPH 21%
 
 # Fees per kWh, VAT excluded
-KWH_FEE = (350 + 28.3 + 113.53)/1000
+CONSUMPTION_KWH_FEE = (350 + 28.3 + 113.53)/1000
+PRODUCTION_KWH_FEE = (450)/1000
 
 ATTR_API_CURRENT_MARKET_PRICE = "current_market_price"
 ATTR_API_CURRENT_CONSUMPTION_PRICE = "current_consumption_price"
