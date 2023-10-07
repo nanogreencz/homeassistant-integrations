@@ -134,8 +134,7 @@ series:
         date.setMinutes(0)
         date.setSeconds(0)
         return [date, price];
-      }),
-      ...entity.attributes.tomorrow_hourly_consumption_prices_incl_vat.map((price,
+      }), ...entity.attributes.tomorrow_hourly_prices_incl_vat.map((price,
       index) => {
         const date2 = new Date()
         date2.setDate(date2.getDate()+1)
@@ -146,6 +145,8 @@ series:
       })];
     show:
       in_header: before_now
+now:
+  show: true
 graph_span: 48h
 span:
   start: day

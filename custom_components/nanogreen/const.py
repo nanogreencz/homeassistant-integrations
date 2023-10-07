@@ -34,7 +34,7 @@ ATTR_API_TODAY_OFFPEAK_SECOND_CHEAPEST_HOUR = "today_offpeak_second_cheapest_hou
 ATTR_API_TODAY_HOURLY_PRICES = "today_hourly_prices"
 ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_INCL_VAT = "today_hourly_consumption_prices_incl_vat"
 ATTR_API_TOMORROW_HOURLY_PRICES = "tomorrow_hourly_prices"
-ATTR_API_TOMORROW_HOURLY_PRICES_INCL_VAT = "tomorrow_hourly_prices_incl_vat"
+ATTR_API_TOMORROW_HOURLY_CONSUMPTION_PRICES_INCL_VAT = "tomorrow_hourly_consumption_prices_incl_vat"
 
 
 SENSOR_TYPES: tuple[SensorEntityDescription, ...] = (
