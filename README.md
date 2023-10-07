@@ -114,28 +114,39 @@ span:
   start: day
 ```
 
-- také si můžete do grafu dát cenu spotřeby včetně všech poplatků a DPH
+- také si můžete do grafu dát cenu spotřeby včetně všech poplatků a DPH a i na další den dopředu
 
 ```yaml
 type: custom:apexcharts-card
 header:
   show: true
-  title: Cena elektriny dnes
+  title: Cena elektriny s DPH a poplatky
   show_states: true
   colorize_states: true
 series:
   - entity: sensor.current_market_price_czk_kwh
-    data_generator: |
-      return entity.attributes.today_hourly_consumption_prices_incl_vat.map((price, index) => {
+    data_generator: >
+      return
+      [...entity.attributes.today_hourly_consumption_prices_incl_vat.map((price,
+      index) => {
         const date = new Date()
         date.setHours(index)
         date.setMinutes(0)
         date.setSeconds(0)
         return [date, price];
-      });
+      }),
+      ...entity.attributes.tomorrow_hourly_consumption_prices_incl_vat.map((price,
+      index) => {
+        const date2 = new Date()
+        date2.setDate(date2.getDate()+1)
+        date2.setHours(index)
+        date2.setMinutes(0)
+        date2.setSeconds(0)
+        return [date2, price];
+      })];
     show:
       in_header: before_now
-graph_span: 24h
+graph_span: 48h
 span:
   start: day
 ```
