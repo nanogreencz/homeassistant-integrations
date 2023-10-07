@@ -16,13 +16,12 @@ UPDATE_LISTENER = "update_listener"
 PLATFORMS = [Platform.SENSOR]
 VAT = 1.21  # DPH 21%
 
-# Fees per MWh in watt, without VAT
-WH_FEE = (350 + 113)/1000
-
+# Fees per kWh, VAT excluded
+KWH_FEE = (350 + 28.3 + 113.53)/1000
 
 ATTR_API_CURRENT_MARKET_PRICE = "current_market_price"
 ATTR_API_CURRENT_CONSUMPTION_PRICE = "current_consumption_price"
-ATTR_API_CURRENT_CONSUMPTION_PRICE_WITH_VAT = "current_consumption_price_with_vat"
+ATTR_API_CURRENT_CONSUMPTION_PRICE_INCL_VAT = "current_consumption_price_incl_vat"
 ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE = "current_production_price_with_nano"
 ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE = "current_production_price_without_nano"
 ATTR_API_TODAY_BASE_CHEAPEST_HOUR = "today_base_cheapest_hour"
@@ -32,7 +31,7 @@ ATTR_API_TODAY_BASE_SECOND_CHEAPEST_HOUR = "today_base_second_cheapest_hour"
 ATTR_API_TODAY_PEAK_SECOND_CHEAPEST_HOUR = "today_peak_second_cheapest_hour"
 ATTR_API_TODAY_OFFPEAK_SECOND_CHEAPEST_HOUR = "today_offpeak_second_cheapest_hour"
 ATTR_API_TODAY_HOURLY_PRICES = "today_hourly_prices"
-ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_WITH_VAT = "today_hourly_consumption_prices_with_vat"
+ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_INCL_VAT = "today_hourly_consumption_prices_incl_vat"
 ATTR_API_TOMORROW_HOURLY_PRICES = "tomorrow_hourly_prices"
 
 
@@ -48,8 +47,8 @@ SENSOR_TYPES: tuple[SensorEntityDescription, ...] = (
         native_unit_of_measurement="CZK/kWh",
     ),
     SensorEntityDescription(
-        key=ATTR_API_CURRENT_CONSUMPTION_PRICE_WITH_VAT,
-        name="Current consumption price with VAT [CZK/kWh]",
+        key=ATTR_API_CURRENT_CONSUMPTION_PRICE_INCL_VAT,
+        name="Current consumption price including VAT [CZK/kWh]",
         native_unit_of_measurement="CZK/kWh",
     ),
     SensorEntityDescription(
