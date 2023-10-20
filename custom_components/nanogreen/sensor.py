@@ -11,7 +11,9 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import (
     ATTR_API_TODAY_HOURLY_PRICES,
+    ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_INCL_VAT,
     ATTR_API_TOMORROW_HOURLY_PRICES,
+    ATTR_API_TOMORROW_HOURLY_CONSUMPTION_PRICES_INCL_VAT,
     BINARY_SENSOR_TYPES,
     DOMAIN,
     ENTRY_COORDINATOR,
@@ -94,8 +96,14 @@ class NanogreenSensor(SensorEntity):
             ATTR_API_TODAY_HOURLY_PRICES: self._coordinator.data.get(
                 ATTR_API_TODAY_HOURLY_PRICES
             ),
+            ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_INCL_VAT: self._coordinator.data.get(
+                ATTR_API_TODAY_HOURLY_CONSUMPTION_PRICES_INCL_VAT
+            ),
             ATTR_API_TOMORROW_HOURLY_PRICES: self._coordinator.data.get(
                 ATTR_API_TOMORROW_HOURLY_PRICES
+            ),
+            ATTR_API_TOMORROW_HOURLY_CONSUMPTION_PRICES_INCL_VAT: self._coordinator.data.get(
+                ATTR_API_TOMORROW_HOURLY_CONSUMPTION_PRICES_INCL_VAT
             ),
         }
 
