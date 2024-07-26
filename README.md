@@ -51,7 +51,7 @@ Repozitář by se vám měl zobrazit mezi ostatními repozitáři.
 | ID                                      | Popis                                                                                                                                         |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | `current_market_price`                  | Současná tržní cena elektřiny.                                                                                                                |
-| `current_consumption_price`             | Tržní cena pro spotřebu po odečtení poplatku za služby obchodu ve výši 350 Kč/MWh bez DPH.                                                    |
+| `current_consumption_price`             | Tržní cena pro spotřebu po přičtení poplatku za služby obchodu ve výši 350 Kč/MWh bez DPH.                                                    |
 | `current_production_price_with_nano`    | Tržní cena pro výkup přebytků při současném odběru elektřiny od Nano Green po odečtení poplatku za služby obchodu ve výši 600 Kč/MWh bez DPH. |
 | `current_production_price_without_nano` | Tržní cena pro výkup přebytků při odběru elektřiny od jiného dodavatele po odečtení poplatku za služby obchodu ve výši 900 Kč/MWh bez DPH.    |
 | `today_base_cheapest_hour`              | Dnešní nejlevnější hodina za celý den.                                                                                                        |

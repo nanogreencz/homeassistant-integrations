@@ -72,8 +72,8 @@ class NanogreenUpdateCoordinator(DataUpdateCoordinator):
             # non binary sensors
             ATTR_API_CURRENT_MARKET_PRICE: current_price,
             ATTR_API_CURRENT_CONSUMPTION_PRICE: current_price + 0.35,
-            ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE: current_price - 0.6,
-            ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE: current_price - 0.9,
+            ATTR_API_CURRENT_PRODUCTION_WITH_NANO_PRICE: current_price - 0.45,
+            ATTR_API_CURRENT_PRODUCTION_WITHOUT_NANO_PRICE: current_price - 0.6,
             ATTR_API_TODAY_BASE_CHEAPEST_HOUR: data.get("todayBaseCheapestHour"),
             ATTR_API_TODAY_BASE_SECOND_CHEAPEST_HOUR: data.get(
                 "todayBaseSecondCheapestHour"
